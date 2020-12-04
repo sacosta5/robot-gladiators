@@ -85,7 +85,7 @@ var startGame = function() {
              // let player know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
             // pick new enemy to fight based on the index of the enemyNames array
 
-         enemyHealth=50;
+            enemyHealth=50;
              // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
           fight(pickedEnemyName);
 
@@ -104,13 +104,11 @@ var startGame = function() {
          break;
          }
         }
-     startGame();
+    endGame()
     // after the loop ends, player is either out of health or enemies to fight, so run the endGame function
-  endGame();
+  startGame();
 
   };
-  //Start the game when the page loads
-  startGame();
 
   //function to end the entire game
 var endGame = function() {
@@ -178,5 +176,9 @@ var shop = function() {
             shop();
             break;
     }
-    };
+};
 
+
+
+
+startGame();
