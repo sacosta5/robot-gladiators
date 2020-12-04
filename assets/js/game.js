@@ -99,7 +99,7 @@ var fight = function(enemyName) {
 
   };
   //Start the game when the page loads
-  startGame()
+  startGame();
 
   //function to end the entire game
   var endGame = function() {
