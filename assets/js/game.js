@@ -18,7 +18,20 @@ var enemyInfo = [
         attack: randomNumber(10, 14)
     },
 ];
+// function to set name
+var getPlayerName = function() {
+    var name = "";
+
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?");
+    }
+
+
+    console.log("Your robot's name is" + name);
+    return name;
+}
 var playerInfo = {
+    name: getPlayerName(),
     name: window.prompt("What is your robot's name?"),
     health: 100,
     attack: 10,
@@ -129,6 +142,7 @@ var startGame = function() {
     // if player is still alive, keep fighting
          if (playerInfo.health > 0 && i < enemyInfo.lenght - 1) {
             window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+            
             var pickedEnemyObj = enemyInfo[i];
              // ask if player wants to use the store before next round
              }
