@@ -100,7 +100,6 @@ var fightOrSkip = function() {
 var fight = function(enemy) {
     // keep track of who goes first
     var isPlayerTurn = true;
-  ​
     // randomly change turn order
     if (Math.random() > 0.5) {
       isPlayerTurn = false;
@@ -170,7 +169,7 @@ var fight = function(enemy) {
       // switch turn order for next round
       isPlayerTurn = !isPlayerTurn;
     }
-  };
+};
   //function to start a new game
 
 var startGame = function() {
@@ -223,6 +222,22 @@ var endGame = function() {
       }
       else{
         window.alert("You've lost your robot in battle.");
+      }
+      window.alert("The game has now ended. Let's see how you did!");
+
+      //check local storage for high score, if it's not there, use 0
+      var highScore = localStorage.getItem("highscore");
+      if (highScore === null) {
+          highscore = 0;
+      }
+      if (playerInfo.money > highScore) {
+          localStorage.setItem("highscore", playerInfo.money);
+          localStorage>setITem("name", playerInfo.name);
+
+          alert(playerInfo.name + " now has the high score of " + playerInfo.money + "!");
+      }
+      else {
+          alert(playerInfo.name + " did not beat the high score of " + highScore + ". Maybe next time!");
       }
       //ask player if they'd like to play again
       var playAgainConfirm = window.confirm("Would you like to play again?");
